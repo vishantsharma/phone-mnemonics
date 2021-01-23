@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Keypad, MnemonicList } from "../../components/keypad/index";
+import { Keypad, ScrollBar } from "../../components/keypad/index";
 import { NumberField } from "../../components/mnemonics";
 
 export default function App() {
@@ -8,7 +8,7 @@ export default function App() {
       <NumberField />
       <KeypadSection>
         <Keypad />
-        <MnemonicList />
+        <ScrollBar />
       </KeypadSection>
     </AppElement>
   );

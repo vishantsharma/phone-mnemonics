@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { FixedSizeList } from "react-window";
 import styled from "styled-components";
 
-export default function MnemonicList() {
+export default function ScrollBar() {
   const { mnemonics } = useSelector(({ keypad }) => keypad);
 
   const Row = ({ index, style }) => (
