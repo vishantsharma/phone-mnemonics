@@ -7,31 +7,31 @@ import {
   setWarning,
 } from "../../redux/actions";
 
-export default function Key({ face, letters }) {
+export default function Key({ value, data }) {
   const dispatch = useDispatch();
   const { number } = useSelector(({ keypad }) => keypad);
   const { warning } = useSelector(({ status }) => status);
 
-  return face >= 0 ? (
+  return value >= 0 ? (
     <KeyButton
       onClick={() =>
         number >= 100000
           ? dispatch(setWarning(true))
-          : dispatch(addNumber(face))
+          : dispatch(addNumber(value))
       }
-      aria-label={`${face} ${letters.join(" ")}`}
-      id={`${face}-key`}
+      aria-label={`${value} ${data.join(" ")}`}
+      id={`${value}-key`}
     >
-      <KeyContent>{face}</KeyContent>
-      <KeyContent>{letters.join(" ")}</KeyContent>
+      <KeyContent>{value}</KeyContent>
+      <KeyContent>{data.join(" ")}</KeyContent>
     </KeyButton>
-  ) : face === "clear" ? (
+  ) : value === "clear" ? (
     <ActionKey
       onClick={() => {
         dispatch(clearNumber());
         dispatch(setWarning(false));
       }}
-      id={`${face}-key`}
+      id={`${value}-key`}
       aria-label="clear"
     >
       {'Reset'}
@@ -42,7 +42,7 @@ export default function Key({ face, letters }) {
         dispatch(removeLastNumber());
         warning && dispatch(setWarning(false));
       }}
-      id={`${face}-key`}
+      id={`${value}-key`}
       aria-label="delete"
     >
       {'Back'}

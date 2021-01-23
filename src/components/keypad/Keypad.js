@@ -8,7 +8,7 @@ export default function Keypad() {
     <KeypadContainer>
       <ButtonLayout>
         {buttonOrder.map((item) => (
-          <Key face={item} letters={buttons[item]} index={item} key={item} />
+          <Key value={item} data={buttons[item]} index={item} key={item} />
         ))}
       </ButtonLayout>
     </KeypadContainer>
