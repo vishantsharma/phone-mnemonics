@@ -1,15 +1,6 @@
 import styled from "styled-components";
 import { useSpring, animated } from "react-spring";
 
-/**
- * A singular mnemonic tile to be rendered within a virtualized
- * react-window list.
- *
- * @param {string} word - The word to be displayed on the mnemonic tile.
- * @param {Object} style - The styling of the parent element to be wrapped
- *                         around the tile. This is used by react-window
- *                         for rendering.
- */
 export default function Mnemonic({ word, style }) {
   const props = useSpring({
     transform: "scaleX(1)",

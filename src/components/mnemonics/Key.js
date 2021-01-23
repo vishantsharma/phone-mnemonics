@@ -7,17 +7,6 @@ import {
   setWarning,
 } from "../../redux/actions";
 
-/**
- * An individual key to be rendered as part of a keypad. Accept a "face" value to
- * determine what to display on the key, as well as an array of letters to be displayed
- * underneath.
- *
- * @param {letter | number} face - The primary item to be displayed on the button. Usually
- *                                 a number, though 'clear' and 'delete' can be provided
- *                                 for functional keys
- * @param {string[]} letters - The letters to be shown under the face text. If providing a
- *                           functional key without a number - can be left undefined.
- */
 export default function Key({ face, letters }) {
   const dispatch = useDispatch();
   const { number } = useSelector(({ keypad }) => keypad);
